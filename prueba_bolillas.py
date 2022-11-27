@@ -9,7 +9,7 @@ anchoPantalla = 800
 altoPantalla = 600
 
 #creamos una pantalla o surface
-pantalla_principal = pg.display.set_mode( (anchoPantalla, altoPantalla) )#ventana y tamaño (en tuplas) ventana
+pantallaPrincipal = pg.display.set_mode( (anchoPantalla, altoPantalla) )#ventana y tamaño (en tuplas) ventana
 pg.display.set_caption("Bolillas Rebotando")#titulo de la ventana
 
 
@@ -34,16 +34,16 @@ while not gameOver:
         if eventos.type == pg.QUIT:
             gameOver = True
 
-    pantalla_principal.fill( (52, 152, 219) )#asignar (en tuplas) un color rgb a la pantalla.
+    pantallaPrincipal.fill( (52, 152, 219) )#asignar (en tuplas) un color rgb a la pantalla.
 
     for bola in listBolas: #para cada bola creada hacemos que se muevan con la funcion mueveBola:
         bola.mueveBola(anchoPantalla, 0, altoPantalla, 0)
 
         #unos seran rectangulos y otros circulos y por tanto debemos crear dos opciones:
         if bola.esCirculo:
-            pg.draw.circle(pantalla_principal, bola.color, (bola.posicionX, bola.posicionY), bola.ancho, 0) #esto dibuja circulos.
+            pg.draw.circle(pantallaPrincipal, bola.color, (bola.posicionX, bola.posicionY), bola.ancho, 0) #esto dibuja circulos.
         else:
-            pg.draw.rect(pantalla_principal, bola.color, (bola.posicionX, bola.posicionY, bola.ancho, bola.alto)) #esto dibuja rectangulos.
+            pg.draw.rect(pantallaPrincipal, bola.color, (bola.posicionX, bola.posicionY, bola.ancho, bola.alto)) #esto dibuja rectangulos.
 
     pg.display.flip()#activa todo lo que hemos hecho en la pantalla por lo que las cosas que pongamos tienen que escribirse antes de este comando para que se ejecuten.
 
