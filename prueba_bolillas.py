@@ -1,17 +1,13 @@
 import pygame as pg
 from class_bolilla import *
 
-#inicializar todos los modulos de pygame
-#pantallas,sonidos,teclados, etc
 pg.init()
 
 anchoPantalla = 800
 altoPantalla = 600
 
-#creamos una pantalla o surface
-pantallaPrincipal = pg.display.set_mode( (anchoPantalla, altoPantalla) )#ventana y tamaño (en tuplas) ventana
-pg.display.set_caption("Bolillas Rebotando")#titulo de la ventana
-
+pantallaPrincipal = pg.display.set_mode( (anchoPantalla, altoPantalla) )
+pg.display.set_caption("Bolillas Rebotando")
 
 gameOver = False
 
